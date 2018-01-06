@@ -1,0 +1,130 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+      <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+      <div class="container">
+          <div class="owner">
+              <div class="avatar">
+                  <img src="{{user.logo}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+              </div>
+              <div class="name">
+                  <h4 class="title">{{user.nom_ent}}<br /></h4>
+                  <div class="row">
+                          <div class="col-md-6 ml-auto mr-auto " >
+                        
+                              <button class="btn btn-outline-default btn-round" style="margin-top: -202px; margin-left: 134px;"><i class="fa fa-cog"></i></button>
+                          </div>
+                      </div>
+                  <h5 class="description" style="margin-left: -20px;">Nouveau article </h5>
+             </div>
+          </div>
+         
+          <br/>
+          <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                  
+                  <ngb-tabset [justify]="'center'">
+                      <ngb-tab title="Mes Coordonnées">
+                              <ng-template ngbTabContent>
+                                  <div class="content" style="margin-left: 300px; width: 500px;">
+                                          <form (ngSubmit)="processForm(nom,categorie,telephone,prix,lieu,date,apropos,fileInput)">
+                                              <div class="row">
+  
+                                              <div class="col-md-6">
+                                                      <div class="form-group">
+                                                          <label for="nom_produit">Nom produit</label>
+                                                          <input #nom type="text" name="nom_produit"  required class="form-control border-input" [(ngModel)]="offre.nom_produit" placeholder="nom produit" >                                                          
+                                                        </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <div class="form-group">
+                                                          <label for="categorie_p">categorie produit</label>
+                                                          <input #categorie type="text"  class="form-control border-input" required name="categorie_p" [(ngModel)]="offre.categorie_p" placeholder="categorie produit">
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                              
+                                              <div class="col-md-6">
+                                                   <div class="form-group">
+                                                     <label for="telephone">telephone</label>
+                                                       <input #telephone type="text" class="form-control border-input" name="telephone" [(ngModel)]="offre.telephone" placeholder="telephone">
+                                                   </div>
+                                              </div>
+
+                                                  
+                                              <div class="col-md-6">
+                                                      <div class="form-group">
+                                                            <label for="prix">prix</label>
+                                                                <input #prix type="text"  name="prix" [(ngModel)]="offre.prix" class="form-control border-input" placeholder="prix" >
+                                                        </div>
+                                              </div>
+
+                                           </div>
+                                           <div class="row">
+                                            
+                                            <div class="col-md-6">
+                                                 <div class="form-group">
+                                                   <label for="lieu_offre">Lieu</label>
+                                                     <input #lieu type="text" class="form-control border-input" name="lieu_offre" [(ngModel)]="offre.lieu_offre" placeholder="Lieu">
+                                                 </div>
+                                            </div>
+
+                                                
+                                            <div class="col-md-6">
+                                                    <div class="form-group">
+                                                          <label for="date_pub">Date de publication</label>
+                                                              <input #date type="date" class="form-control border-input" name="date_pub" [(ngModel)]="offre.date_pub" placeholder="Date de publication" >
+                                                      </div>
+                                            </div>
+
+                                         </div>
+
+            
+                                              <div class="row">
+                                                      
+                                                     <div class="col-md-12 ">
+                                                        <div class="form-group">
+                                                            <label for="a_propos">A propos de l'offre</label>
+                                                            <textarea #apropos rows="5" class="form-control border-input" name="a_propos" [(ngModel)]="offre.a_propos" placeholder="A propos de l'offre" >
+                                                                    </textarea>
+                                                        </div>
+                                                      </div>
+
+
+
+
+                                                      <div class="row">
+                                                        
+                                                        <div class="col-md-6">
+                                                             <div class="form-group">
+                                                                    <label for="image"></label>
+                                                                    <input #fileInput type="file" name="image" [(ngModel)]="offre.image" (change)="fileChanged($event)"/> 
+                                                             </div>
+                                                        </div>
+                                                        </div>
+
+
+
+                                                        
+                                                         <div class="text-center">
+                                                              <button type="submit" class="btn btn-info btn-fill btn-wd" style=" margin-left: 155px;">Déposer Offre</button>
+                                                          </div>
+                                                     </div>
+                                                  
+                                                         
+                                              <div class="clearfix"></div>
+                                          </form>
+                                      </div> 
+                               </ng-template>
+                          </ngb-tab>
+
+
+                  </ngb-tabset>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

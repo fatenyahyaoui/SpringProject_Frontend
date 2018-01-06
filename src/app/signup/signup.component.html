@@ -1,0 +1,71 @@
+<h3 *ngIf="acheteurIdToUpdate; else create"> 
+    Update Acheteur for Id: {{acheteurIdToUpdate}}
+ </h3>
+ <ng-template #create>
+ </ng-template>
+<div class="wrapper">
+        <div class="page-header" style="background-image: url('../assets/img/homeBG.png');">
+            <div class="filter"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                            <div class="card card-register">
+                                    <h3 class="title  text-center" style="color:white; font-size:xx-large; ">Créer un compte</h3>
+                              
+                                    <form form [formGroup]="acheteurForm" (ngSubmit)="onAcheteurFormSubmit()" class="register-form">
+
+                                        <label *ngIf="acheteurForm.get('nom_acheteur').invalid && processValidation" [ngClass] = "'error'"> Le nom est requis. </label>
+                                        <input  formControlName="nom_acheteur" type="text" class="form-control" placeholder="Nom">
+
+                                        <label *ngIf="acheteurForm.get('prenom_acheteur').invalid && processValidation" [ngClass] = "'error'">le prénom est requis. </label>
+                                        <input  formControlName="prenom_acheteur" type="text" class="form-control" placeholder="Prénom">
+
+                                        <label *ngIf="acheteurForm.get('adresse_acheteur').invalid && processValidation" [ngClass] = "'error'"> L'adresse est requis. </label>
+                                        <input  formControlName="adresse_acheteur" type="text" class="form-control" placeholder="Adresse">
+
+                                        <label *ngIf="acheteurForm.get('code_postale').invalid && processValidation" [ngClass] = "'error'"> Le code postale est requis. </label>
+                                        <input  formControlName="code_postale" type="text" class="form-control" placeholder="Code postale">
+
+                                        <label for="avatar" *ngIf="acheteurForm.get('avatar').invalid && processValidation" [ngClass] = "'error'"  > Le photo est requis. </label>
+                                        <input  formControlName="avatar"  #fileInput type="file" name="avatar" (change)="fileChanged($event)" class="form-control" placeholder="Photo"> 
+                                        
+                                        <label *ngIf="acheteurForm.get('tel_acheteur').invalid && processValidation" [ngClass] = "'error'"> Le téléphone est requis. </label>
+                                        <input  formControlName="tel_acheteur" type="text" class="form-control" placeholder="Téléphone">
+
+                                        <label *ngIf="acheteurForm.get('mail').invalid && processValidation" [ngClass] = "'error'"> L'email est requis.</label>
+                                        <input  formControlName="mail" type="text" class="form-control" placeholder="Email">
+        
+                                        <label *ngIf="acheteurForm.get('password').invalid && processValidation" [ngClass] = "'error'"> Le mot de passe est requis. </label>
+                                        <input formControlName="password" type="password" class="form-control" placeholder="Mot de passe">
+                                       
+                                    </form>
+                                    <button (click)="CreateAcheteur()" class="btn btn-danger btn-block btn-round">Inscription</button>
+                                    
+                                  <ng-template #processing>
+                                    <img *ngIf="requestProcessing" src="assets/img/loading.gif">
+                                 </ng-template>
+                                 
+                                <div class="forgot">
+                                        <div *ngIf="statusCode; else processing">
+                                                <div *ngIf="statusCode === 201" [ngClass] = "'success'">
+                                                    Inscription faite avec succès.
+                                                </div>   
+                                                <div *ngIf="statusCode === 409" [ngClass] = "'success'">
+                                                     Le acheteur existe déjà.
+                                                </div>
+                                             	   
+                                                <div *ngIf="statusCode === 500" [ngClass] = "'error'">
+                                                        Erreur Interne du Serveur.
+                                                </div>   	
+                                              </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer register-footer text-center">
+                            <h6> made in ISAMM with <i class="fa fa-heart heart"></i> by Our Team</h6>
+                        </div>
+                </div>
+        </div>
+    </div>
+    

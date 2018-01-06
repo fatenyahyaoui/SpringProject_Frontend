@@ -1,0 +1,76 @@
+
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="{{user.logo}}"  alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h4 class="title">{{user.nom_ent}}<br /></h4>
+                    <button style="margin-left:85%" (click)="deconnexion()" class="btn btn-danger btn-lg btn-fill" style="    margin-left: 1000px;margin-top: -100px;"><i class="nc-icon nc-lock-circle-open"></i>&nbsp;&nbsp;déconnexion</button>
+                    <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto " >
+                          
+                                <button (click)="naviguer()" class="btn btn-outline-default btn-round" style="margin-top: -202px; margin-left: 134px;"><i class="fa fa-cog"></i></button>
+                            </div>
+                        </div>
+               </div>
+            </div>
+            <div class="main">
+                <br/> <br/>
+               
+               <div class="col-md-10" style=" margin-left: 100px;">
+                        
+                 
+                <div class="card card-plain">
+                    <div class="header">
+                        <h4>Liste des offres</h4>
+                        <button style="margin-left:95%;" class="btn btn-primary" (click)="createOffre(offre)">Ajouter une offre</button>
+                        
+                        </div><br><br>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover">
+                            <thead>
+                                    <th>image</th>
+                                <th>nom produit</th>
+                                <th>A propos</th>
+                                <th>categorie produit</th>
+                                <th>Date de publication</th>
+                                <th>telephone</th>
+                                <th>Lieu</th>
+                                <th>prix</th>
+                                <th></th>
+                                <th>Actions</th>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let offre of offres">
+                                <td><img src="{{offre.image}}" width="100px" height="100px"/></td> 
+                                  <td>{{offre.nom_produit}}</td>
+                                  <td>{{offre.a_propos}}</td>
+                                  <td>{{offre.categorie_p}}</td>
+                                  <td>{{offre.date_pub}}</td>
+                                  <td>{{offre.telephone}}</td>
+                                  <td>{{offre.lieu_offre}}</td>
+                                  <td>{{offre.prix}}</td>
+                                  <td></td>
+                                  <td> <button class="btn btn-primary" (click)="updateOffre(offre)">Modifier</button><br><br>
+                                  <button class="btn btn-danger" (click)="deleteOffre(offre)">Supprimer</button></td>
+                                  
+                                </tr>
+                              </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+           
+            <br/>
+            
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+<div class="wrapper">
+        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+          <h2 style="color:white;"></h2><br/><br/>
+       </div> 
+        <div class="main">
+          <br/> <br/> <br/> <br/>
+          <button [routerLink]="['/signin']" class="btn btn-danger btn-lg btn-fill" style=" margin-left: 1090px;margin-top: -100px;"> <i class="nc-icon nc-lock-circle-open"></i>&nbsp;&nbsp;Déconnexion</button>
+          <button [routerLink]="['/liste-acheteur']" class="btn btn-info btn-lg btn-fill" style=" margin-left: 850px;margin-top: -139px;"> <i class="nc-icon nc-user-run"></i>&nbsp;&nbsp;Liste Achteur</button>
+          
+         <div class="col-md-10" style=" margin-left: 100px;">
+                  
+           
+          <div class="card card-plain">
+              <div class="header">
+                  <h4 class="title">Liste des Vendeurs</h4>
+                  </div>
+              <div class="content table-responsive table-full-width">
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                                <th>Logo</th>
+                              <th>Nom de l'entreprise</th>
+                              <th>Popularite</th>
+                              <th>Siège</th>
+                              
+                              <th>Site Web</th>
+                              <th>effectif</th>
+                              <th>Fondée en </th>
+                              <th>Secteur d'actitivté</th>
+                              <th>Description</th>
+                              <th>Email</th>
+                            
+                              <th>Action</th>
+                          </tr>
+                         
+                      </thead>
+                      <tbody>
+                            <tr *ngFor="let entreprise of entreprises">
+                                    <td><img src="{{entreprise.logo}}" width="100px" height="100px"/></td>
+                                    
+                                    <td>{{entreprise.nom_ent}}</td>
+                                    <td>{{entreprise.popularite}}</td>
+                                    <td>{{entreprise.siege}}</td>
+                                    <td>{{entreprise.siteweb}}</td>
+                                    <td>{{entreprise.effectif}}</td>
+                                    <td>{{entreprise.fondation}}</td>
+                                    <td>{{entreprise.secteur_etr}}</td>
+                                    <td>{{entreprise.descreption_etr}}</td>
+                                    <td>{{entreprise.email_etr}}</td>
+                                    <td>
+                                            <button  [disabled]="verifValid(entreprise.etat_compt_etr)" class="btn btn-success btn-lg btn-fill" (click)="confimerCompte(entreprise.id_etr)" ><i class="nc-icon  nc-bell-55"></i>&nbsp;&nbsp;Confirmer</button><br><br>
+                                            <button class="btn btn-danger btn-lg btn-fill" (click)="deleteEntreprise(entreprise)"><i class="nc-icon nc-simple-remove"></i>&nbsp;&nbsp;Supprimer</button>
+                                            
+                                        </td>
+                             
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      
+      </div>
+      </div> 

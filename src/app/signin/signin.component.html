@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('../assets/img/homeBG.png');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                        <div class="card card-register">
+                            <h3 class="title  text-center" style="color:white; font-size:xx-large; ">Se connecter</h3>
+                            
+                            <form class="register-form" name="form" (ngSubmit)="login(mail,pass)"  novalidate>
+                               
+                                <label>Email</label>
+                                
+                                <input #mail type="text" class="form-control" placeholder="E-mail"  name="email" id="email">
+
+                                <label>Mot de passe</label>
+                                <input #pass type="password" class="form-control" placeholder="mot de passe" name="password"  id ="pwd">
+                                <button class="btn btn-danger btn-block btn-round"  >Connexion</button>
+                            </form>
+                            <h4>{{Str}}</h4>
+                            <div class="forgot">
+                                <a [routerLink]="['/signup']" class="btn btn-link btn-danger">inscription</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+

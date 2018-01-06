@@ -1,0 +1,62 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('../assets/img/homeBG.png');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                        <div class="card card-register">
+                                <h3 class="title  text-center" style="color:white; font-size:xx-large; ">Créer un compte</h3>
+                          
+                            <form (ngSubmit)="processForm()">
+                                <label for="nom_ent"></label>
+                                <input type="text" name="nom_ent" [(ngModel)]="entreprise.nom_ent" class="form-control"  placeholder="Nom de l'entreprise">
+
+                                <label for="popularite"></label>
+                                <input type="text" name="popularite" [(ngModel)]="entreprise.popularite" class="form-control"  placeholder="Popularité">
+
+                                <label for="siege"></label>
+                                <input type="text" name="siege" [(ngModel)]="entreprise.siege" class="form-control"  placeholder="Siége">
+
+                                <label for="secteur_etr"></label>
+                                <input input type="text" name="secteur_etr" [(ngModel)]="entreprise.secteur_etr" class="form-control"  placeholder="Secteur d'actitivté">
+
+                                <label for="fondation"></label>
+                                <input input type="date" name="fondation" [(ngModel)]="entreprise.fondation" class="form-control"  placeholder="Fondée en">
+
+                                <label for="descreption_etr"></label>
+                                <input input type="textarea" name="descreption_etr" [(ngModel)]="entreprise.descreption_etr" class="form-control"  placeholder="Description">
+
+                                <label for="siteweb"></label>
+                                <input input type="text" name="siteweb" [(ngModel)]="entreprise.siteweb" class="form-control"  placeholder="Site Web">
+
+                                <label for="effectif"></label>
+                                <input input type="text" name="effectif" [(ngModel)]="entreprise.effectif" class="form-control"  placeholder="Effectif">
+
+                                <label for="email_etr"></label>
+                                <input input type="text" name="email_etr" [(ngModel)]="entreprise.email_etr" class="form-control"  placeholder="Email">
+
+                                <label for="logo"></label>
+                                <input #fileInput type="file" name="logo" [(ngModel)]="entreprise.logo" (change)="fileChanged($event)"/> 
+                                <label for="login"></label>
+                                <input input type="text" name="login" [(ngModel)]="entreprise.login" class="form-control"  placeholder="Login">
+
+                                <label for="password"></label>
+                                <input input type="password" name="password" [(ngModel)]="entreprise.password" class="form-control"  placeholder="Mot de passe">
+                                
+                                <input type="submit" value="Inscription" class="btn btn-danger btn-block btn-round">
+                                
+                            </form>
+                     
+                            <div class="forgot">
+                                <a href="#" class="btn btn-link btn-danger"></a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer register-footer text-center">
+                        <h6> made with <i class="fa fa-heart heart"></i> by our teams </h6>
+                    </div>
+            </div>
+    </div>
+</div>

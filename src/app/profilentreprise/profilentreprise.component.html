@@ -1,0 +1,45 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+      <div class="filter"></div>
+      <h2 style="color:white;">{{description}}</h2>
+   </div> 
+    <div class="main">
+       <br/>
+     <div style="margin-left:40%"> <h2 style="color:rgb(204, 37, 37);">Liste des Offres</h2></div>
+     <br/>
+     <div style="margin-left:23%" class="header">
+      
+        <label> Rechercher :</label><input type="text" [(ngModel)]="term">
+        </div>
+        <br/>
+      <div >
+  <div class="card" style="width: 800px;margin-left:300px; height: 350px; ">
+          <div class="content" >
+              <form>
+                  <div  class="row">
+                      <div *ngFor = "let item of items |filter:term" class="col-md-4">
+                          <div class="form-group">
+                             <br/>
+                              <img src="assets/img/union.jpg" style="width: 56%;margin-left: 30px;margin-top:25px;">  
+                              <h5 class="text-center" style="margin-left: -22px; margin-top: 5px;">{{item.secteur_activite}}</h5>
+                            <hr/>
+                            <br/>
+                            <h6  style="margin-top: 0px;margin-left:20px;">Intitulé :{{item.titre_offre}}</h6>
+                            <h6  style="margin-top: 0px;margin-left:20px;">Publié   :{{item.date_pub}}</h6>
+                            
+                          <h4>    <a [routerLink]="['/postuler',item.secteur_activite,item.lieu_offre,item.a_propos,item.profil_rechercher,item.salaire,item.date_pub,item.titre_offre]" routerLinkActive="active" style=" margin-left:40px;">Voir Plus</a></h4>
+                            </div>
+                      </div>
+                    </div>
+                  <div class="clearfix"></div>
+                  <div class="clearfix"></div>
+              </form>
+          </div>
+  </div>
+  
+</div>
+
+
+
+</div>
+</div> 

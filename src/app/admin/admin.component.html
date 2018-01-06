@@ -1,0 +1,62 @@
+
+<div class="wrapper">
+        
+       <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+        <div class="filter"></div>
+        <h2 style="color:white;">Bienvenue Admin</h2><br/><br/>
+      </div> 
+       <div class="main">
+         <br/> <br/> <br/> <br/>
+     <div class="col-lg-8 col-md-7">
+     
+           
+           <button (click)="deconnexion()" class="btn btn-danger btn-lg btn-fill" style="    margin-left: 1090px;margin-top: -100px;"><i class="nc-icon nc-lock-circle-open"></i>&nbsp;&nbsp;déconnexion</button>
+           
+     
+     <div class="card" style="width: 900px;margin-left:200px; ">
+             <div class="content" >
+                 <form>
+                     <div class="row">
+                         <div class="col-md-12">
+                             <div class="form-group" style="margin-left:20px;">
+                                <br/>
+                                 <img src="assets/img/icone-acheteurs.png" style="width: 20%;margin-left: -8px;">  
+                                 <h5 style="margin-top: -44px;margin-left: 180px;">
+                                       <a [routerLink]="['/liste-acheteur']"    > <b>Liste des Acheteurs</b></a><br/><br/></h5>
+                                     
+                              
+                               </div>
+                         </div>
+                       </div>
+                     <div class="clearfix"></div>
+                 </form>
+             </div>
+     </div>
+     
+     
+     <div class="card" style="width: 900px;margin-left:200px; ">
+           <div class="content" >
+               <form>
+                   <div class="row">
+                       <div class="col-md-12">
+                           <div class="form-group" style="margin-left:20px;">
+                              <br/>
+                               <img src="assets/img/icone-ents.png" style="width: 20%;margin-left: -8px;">  
+                               <h5 style="margin-top: -44px;margin-left: 180px;">
+                                       <a [routerLink]="['/liste-vendeur']"> <b>Liste des vendeurs</b></a><br/><br/></h5>
+                                     
+                            </div>
+                       </div>
+                     </div>
+                   <div class="clearfix"></div>
+               </form>
+           </div>
+         </div>
+     
+     </div>
+     
+     
+     
+     </div>
+     </div> 
+     

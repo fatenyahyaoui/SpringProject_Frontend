@@ -1,0 +1,128 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+      <div class="filter"></div>
+  </div>
+  
+  <div class="section profile-content">
+      <div class="container">
+          <div class="owner">
+              <div class="avatar">
+                  <img src="{{user.logo}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+              </div>
+              <div class="name">
+                  <h4 class="title">{{user.nom_ent}}<br /></h4>
+                  <div class="row">
+                          <div class="col-md-6 ml-auto mr-auto " >
+                       
+                          </div>
+                      </div>
+                                 
+                  
+                </div>
+          </div>
+          
+          <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                  
+                  <ngb-tabset [justify]="'center'">
+                      <ngb-tab title="Mes Coordonnées">
+                              <ng-template ngbTabContent>
+                                  <div class="content" style="margin-left: 300px; width: 500px;">
+                                          <form  (ngSubmit)="processForm(nom,siege,site,effectif,mail,date,secteur,desc)">
+                                              <div class="row">
+  
+                                              <div class="col-md-6">
+                                                      <div class="form-group">
+                                                          <label>Nom de l'entreprise</label>
+                                                          <input #nom type="text" class="form-control border-input" value="{{user.nom_ent}}" >
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <div class="form-group">
+                                                          <label >Le siège</label>
+                                                          <input #siege type="text" class="form-control border-input" value="{{user.siege}}" placeholder="Le siège">
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                              
+                                              <div class="col-md-6">
+                                                   <div class="form-group">
+                                                     <label for="exampleInputEmail1">Le Site Web </label>
+                                                       <input #site value="{{user.siteweb}}"  type="text" class="form-control border-input" placeholder="Le Site Web">
+                                                   </div>
+                                              </div>
+
+                                                  
+                                              <div class="col-md-6">
+                                                      <div class="form-group">
+                                                            <label>Effectif</label>
+                                                                <input #effectif value="{{user.effectif}}"  type="number" class="form-control border-input" placeholder="Effectif" >
+                                                        </div>
+                                              </div>
+
+                                           </div>
+                                           <div class="row">
+                                              
+                                              <div class="col-md-6">
+                                                   <div class="form-group">
+                                                     <label for="exampleInputEmail">Email de l'entreprise</label>
+                                                       <input #mail type="email" value="{{user.email_etr}}"  class="form-control border-input" placeholder="Email de l'entreprise">
+                                                   </div>
+                                              </div>
+
+                                                  
+                                              <div class="col-md-6">
+                                                      <div class="form-group">
+                                                            <label>Le secteur</label>
+                                                                <input #secteur value="{{user.secteur_etr}}"  type="text" class="form-control border-input" placeholder="Le secteur" >
+                                                        </div>
+                                              </div>
+
+                                           </div>
+            
+                                              <div class="row  section javascript-components">
+                                                      
+                                                     <div class="col-md-6 ">
+                                                          <form class="form-inline">
+                                                                  <div class="form-group" style="margin-top: -55px;">
+                                                                          <label>Fondée en &nbsp;&nbsp;</label>
+                                                                      <div class="input-group date">
+                                                                        <input #date type="date" class="form-control border-input" name="date_pub" placeholder="Date de fondation" >
+                                                                        <span class="input-group-addon">
+                                                                              <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                                          </span>
+                                                                      </div>
+                                                                  </div>
+                                                              </form> 
+                                                      </div>
+                                                      </div>
+                                                      
+                                                         <div class="row">
+                                                         <div class="col-md-12">
+                                                             <div class="form-group" style="margin-top:-48px;">
+                                                                 <label>Déscription de l'entreprise</label>
+                                                                 <textarea #desc value="{{user.descreption_etr}}"  rows="5" class="form-control border-input" placeholder="Déscription de l'entreprise" >
+                                                                         </textarea>
+                                                             </div>
+                                                         </div>
+                                                         <div class="text-center">
+                                                              <button type="submit" class="btn btn-info btn-fill btn-wd" style=" margin-left: 155px;">Modifier Profil</button>
+                                                          </div>
+                                                     </div>
+                                                  
+                                                         
+                                              <div class="clearfix"></div>
+                                          </form>
+                                      </div> 
+                               </ng-template>
+                          </ngb-tab>
+
+
+                  </ngb-tabset>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

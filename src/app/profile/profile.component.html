@@ -1,0 +1,144 @@
+<div class="wrapper">
+        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+            <div class="filter"></div>
+        </div>
+        <div class="section profile-content">
+            <div class="container">
+                    
+
+                <div class="owner">
+                        
+                    <div class="avatar">
+                            
+                        <img src="{{user.avatar}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <button style="margin-left:85%" (click)="deconnexion()" class="btn btn-danger btn-lg btn-fill" style="    margin-left: 1000px;margin-top: -100px;"><i class="nc-icon nc-lock-circle-open"></i>&nbsp;&nbsp;déconnexion</button>
+                    
+                    <div class="name">
+                        <h4 class="title">{{user.nom_acheteur}} {{user.prenom_acheteur}}<br /></h4>
+                        <div class="row">
+                                <div class="col-md-6 ml-auto mr-auto " >
+                              
+                                    <button class="btn btn-outline-default btn-round"  style="margin-top: -202px; margin-left: 134px;"  [routerLink]="['/profile']"><i class="fa fa-cog"></i></button>
+                                   
+                            
+                                </div>
+                            </div>
+                  </div>
+                </div>
+               
+                <br/>
+    
+                
+          <div class="nav-tabs-navigation">
+            
+                              <ul role="tablist" class="nav nav-tabs justify-content-center">
+                                             
+                                      
+
+                                
+                                  <li class="nav-item">
+                                      <h6  style="margin-top: 10px">  <a class="nav-link active" aria-disabled="true"
+                                          [routerLink]="['/listoffresauvgarder']"> Mon panier</a></h6>
+                                              
+                                  
+                                    </li>
+
+
+
+                                    </ul>
+                      
+                    
+                
+    
+    
+                    <div class="nav-tabs-wrapper">
+                        
+                        <ngb-tabset [justify]="'center'">
+                            <ngb-tab title="Mes Coordonnées" style="color:rgb(231, 18, 18)">
+                                    <ng-template ngbTabContent>
+                                            
+                                        <div class="content" style="margin-left: 300px; width: 500px;">
+                                            <form (ngSubmit)="UpdateProfil(nom,prenom,adr,pass,code,tel,email)">
+                                                <div class="row">
+    
+                                                <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nom</label>
+                                                            <input #nom type="text" class="form-control border-input" value="{{user.nom_acheteur}}" placeholder="Nom" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Prénom</label>
+                                                            <input #prenom type="text" class="form-control border-input" value="{{user.prenom_acheteur}}" placeholder="Prénom">
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    
+                                                    <div class="col-md-6">
+                                                         <div class="form-group">
+                                                           <label for="exampleInputEmail1">Email </label>
+                                                             <input #email type="email" value="{{user.mail}}" class="form-control border-input" placeholder="Email">
+                                                         </div>
+                                                    </div>
+    
+                                                        
+                                                    <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                  <label>Téléphone</label>
+                                                                      <input #tel value="{{user.tel_acheteur}}" type="number" class="form-control border-input" placeholder="Téléphone" >
+                                                              </div>
+                                                    </div>
+    
+                                                 </div>
+                        
+                                                
+                        
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Adresse</label>
+                                                            <input #adr value="{{user.adresse_acheteur}}"  type="text" class="form-control border-input" placeholder="Addresse" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Code Postale</label>
+                                                            <input #code  value="{{user.code_postale}}" type="text" class="form-control border-input" placeholder="Ville" value="Melbourne">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label> Password</label>
+                                                            <input #pass value="{{user.password}}" type="password" class="form-control border-input" placeholder=" Code Postale">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="text-center">
+                                                    <button type="submit" class="btn btn-info btn-fill btn-wd">
+                                                        Modifier Profil
+                                                    </button>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </form>
+                                        </div>
+                                    </ng-template>
+                             </ngb-tab>
+                             <!--fin-->
+                          
+    
+                        </ngb-tabset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

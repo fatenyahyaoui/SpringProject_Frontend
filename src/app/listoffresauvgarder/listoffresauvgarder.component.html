@@ -1,0 +1,81 @@
+
+
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/homeBG.png');">
+      <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+      <div class="container">
+          <div class="owner">
+              <div class="avatar">
+                  <img src="{{user.avatar}}"  alt="Circle Image" class="img-circle img-no-padding img-responsive">
+              </div>
+              <div class="name">
+                  <h4 class="title">{{user.nom_acheteur}} {{user.prenom_acheteur}}<br /></h4>
+                  <div class="row">
+                          <div class="col-md-6 ml-auto mr-auto " >
+                        
+                          </div>
+                      </div>
+             </div>
+          </div>
+          <div class="main">
+              <br/> <br/>
+             
+             <div class="col-md-10" style=" margin-left: 100px;">
+                      
+               
+              <div class="card card-plain">
+                  <div class="header">
+                      <h4>Mon panier</h4>
+                     
+                      
+                      </div><br><br>
+                  <div class="content table-responsive table-full-width">
+                      <table class="table table-hover">
+                          <thead>
+                             <th>image</th>
+                              <th>nom produit</th>
+                              <th>A propos</th>
+                              
+                              
+                              <th>Date de publication</th>
+                              <th>catégorie</th>
+                              <th>Lieu</th>
+                              <th>prix</th>
+                              <th>telephone</th>
+                              
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let offresauvgarder of allOffresauvgarders">
+                                  <td><img src="{{offresauvgarder.offre.image}}"  alt="Circle Image" class="img-circle img-no-padding img-responsive"></td>
+                                  <td>{{offresauvgarder.offre.nom_produit}}</td>
+                                  <td>{{offresauvgarder.offre.a_propos}}</td>
+                                  <td>{{offresauvgarder.offre.date_pub}}</td>
+                                  <td>{{offresauvgarder.offre.categorie_p}}</td>
+                                  <td>{{offresauvgarder.offre.lieu_offre}}</td>
+                                  <td>{{offresauvgarder.offre.prix}}</td>
+                                  <td>{{offresauvgarder.offre.telephone}}</td>
+                                  
+                                  
+                                 
+                                  
+
+                                
+                        
+                                
+                                
+                              </tr>
+                            </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          
+          </div>
+         
+          <br/>
+          
+      </div>
+  </div>
+</div>

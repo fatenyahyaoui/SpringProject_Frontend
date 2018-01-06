@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate" >
+            <div  >
+                <a [routerLink]="['/landing']" class=" nav-link  btn btn-outline-neutral btn-round   ">Accueil</a>
+       
+</div>
+            <div class="collapse navbar-collapse "  id="navbarToggler" routerLinkActive="active"  >
+                                <a [routerLink]="['/signinvendeur']" class=" nav-link  btn btn-outline-neutral btn-round">Accès vendeurs</a>
+                       
+               </div>
+        </div>
+    <div class="collapse navbar-collapse" id="navbarToggler" routerLinkActive="active" style="margin-left:20px;">
+        <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item" >
+                        <a [routerLink]="['/landing']"  class="nav-link">Accueil</a>
+                   </li>
+          
+            <li class="nav-item">
+                
+                <div ngbDropdown class="d-inline-block dropdown" routerLinkActive="active" >
+                        <a [routerLink]="['/#']" class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Notre produits</a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                                    <a [routerLink]="['/rechercheavancee']" class="  dropdown-item">Recherche avancée</a>
+                                    
+                                    <a [routerLink]="['/rechercheparcategorie']" class=" dropdown-item">Chercher produits par Catégories</a>
+                                    <a [routerLink]="['/rechercheparville']" class="  dropdown-item">Chercher produits par Ville</a>
+                                    <a [routerLink]="['/rechercheparentreprise']" class="  dropdown-item">Chercher produits par Entrepise</a>
+                              </div>
+                    </div>
+            </li>
+
+      
+
+
+            <li class="nav-item" *ngIf="!isHome()">
+                <div ngbDropdown class="d-inline-block dropdown">
+                <a [routerLink]="['/touteslesoffres']" class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Notre produits</a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                        <a [routerLink]="['/touteslesoffres']" class=" dropdown-item">Produits</a>
+                  
+                </div>
+            </div>
+         </li>
+      
+            
+            <li class="nav-item" >
+                    <div ngbDropdown class="d-inline-block dropdown">
+                    <a [routerLink]="['/#']" class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-single-02"></i>Compte</a>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                            <a [routerLink]="['/signin']" class=" dropdown-item">Connexion</a>
+                            <a [routerLink]="['/signup']" class=" dropdown-item">Créer un compte</a>
+                      
+                    </div>
+                </div>
+             </li>
+
+      
+    </ul>
+</div>
+
+
+ </div> 
+</nav>

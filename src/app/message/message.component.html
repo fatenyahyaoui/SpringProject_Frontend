@@ -1,0 +1,132 @@
+<h3 *ngIf="messageIdToUpdate; else create"> 
+  Update Message for Id: {{messageIdToUpdate}}
+</h3>
+<ng-template #create>
+</ng-template>
+<div class="wrapper">
+      <div class="page-header" style="background-image: url('../assets/img/home-bg.jpg');">
+          <div class="filter"></div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                          <div class="card card-register">
+                                  <h3 class="title  text-center" style="color:white; font-size:xx-large; ">Envoyer un message</h3>
+                            
+                                  <form form [formGroup]="messageForm" (ngSubmit)="onMessageFormSubmit()" class="register-form">
+
+                                      <label *ngIf="messageForm.get('source_msg').invalid && processValidation" [ngClass] = "'error'"> source est requis. </label>
+                                      <input  formControlName="source_msg" type="text" class="form-control" placeholder="source">
+
+                                      <label *ngIf="messageForm.get('destinataire_msg').invalid && processValidation" [ngClass] = "'error'">le destinataire est requis. </label>
+                                      <input  formControlName="destinataire_msg" type="text" class="form-control" placeholder="destinataire">
+
+                                      <label *ngIf="messageForm.get('contenu_msg').invalid && processValidation" [ngClass] = "'error'"> contenu est requis. </label>
+                                      <input  formControlName="contenu_msg" type="text" class="form-control" placeholder="contenu">
+
+                                     
+                                     
+                                  </form>
+                                  <button (click)="CreateMessage()" class="btn btn-danger btn-block btn-round">envoyer</button>
+                                  
+                                <ng-template #processing>
+                                  <img *ngIf="requestProcessing" src="assets/img/loading.gif">
+                               </ng-template>
+                               
+                              <div class="forgot">
+                                      <div *ngIf="statusCode; else processing">
+                                              <div *ngIf="statusCode === 201" [ngClass] = "'success'">
+                                                 envoie avec succès.
+                                              </div>   
+                                              <div *ngIf="statusCode === 409" [ngClass] = "'success'">
+                                                   message evoyer  déjà.
+                                              </div>
+                                              	  	   
+                                              <div *ngIf="statusCode === 500" [ngClass] = "'error'">
+                                                      Erreur Interne du Serveur.
+                                              </div>   	
+                                            </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+<div class="col-md-10" style=" margin-left: 100px;">
+                  
+           
+          <div class="card card-plain">
+              <div class="header">
+                  <h4 class="title">Liste des Messages</h4>
+                  </div>
+              <div class="content table-responsive table-full-width">
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th>source</th>
+                              <th>destinataire</th>
+                              <th>contenu</th>
+                              
+                          </tr>
+                         
+                      </thead>
+                      <tbody>
+                            <tr *ngFor="let message of allMessages" >
+                                    <td>{{message.source_msg}}</td> <td> {{message.destinataire_msg}}</td> <td>{{message.contenu_msg}}</td> 
+                                    <td><button type="button" (click)="deleteMessage(message.messageId)" class="btn btn-danger btn-lg btn-fill"><i class="nc-icon nc-simple-remove"></i>&nbsp;&nbsp;Supprimer</button></td>
+                                  </tr>                                  
+                      </tbody>
+                  </table>
+              </div>
+              <br/>
+              <ng-template #processing>
+                    <img *ngIf="requestProcessing" src="assets/img/loading.gif">
+                 </ng-template>
+              <div *ngIf="statusCode; else processing">   	      
+                <div *ngIf="statusCode === 204" [ngClass] = "'success'">
+                        message supprimé avec succès.
+                </div>   	   
+                <div *ngIf="statusCode === 500" [ngClass] = "'error'">
+                        Erreur Interne du Serveur.                        
+                </div>   	
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="footer register-footer text-center">
+                          <h6> made with <i class="fa fa-heart heart"></i> by Our Team</h6>
+                      </div>
+              </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+            </div>
+  
+  
+  
+    </div>
+  
